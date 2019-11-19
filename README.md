@@ -1,0 +1,2 @@
+# JanShu
+remake jianshu application 
