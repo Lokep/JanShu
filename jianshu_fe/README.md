@@ -1,16 +1,22 @@
 # jianshu_fe
 
-A new Flutter project.
+## 当flutter中的page未设置`AppBar`的时候，页面的内容会直接显示在状态栏中
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+解决方法： 
+  1. 首先获取状态栏的高度
+    ```dart
+      import 'dart:ui';
+      MediaQueryData.fromWindow(window).padding.top
+    ````
+  2. 设置`AppBar`的高度
+    ```dart
+      Scaffold(
+      appBar: PreferredSize(
+        preferredSize:Size.fromHeight(MediaQueryData.fromWindow(window).padding.top),
+        child:SafeArea(
+          top: true,
+          child: Offstage(),
+        ),
+      )
+    );
+    ```
