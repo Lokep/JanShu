@@ -4,13 +4,14 @@
 
 解决方法： 
   1. 首先获取状态栏的高度
-    ```dart
-      import 'dart:ui';
-      MediaQueryData.fromWindow(window).padding.top
-    ````
+
+    
+    import 'dart:ui';
+    MediaQueryData.fromWindow(window).padding.top
+    
   2. 设置`AppBar`的高度
-    ```dart
-      Scaffold(
+
+    Scaffold(
       appBar: PreferredSize(
         preferredSize:Size.fromHeight(MediaQueryData.fromWindow(window).padding.top),
         child:SafeArea(
@@ -19,4 +20,4 @@
         ),
       )
     );
-    ```
+    
