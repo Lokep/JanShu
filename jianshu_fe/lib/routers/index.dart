@@ -4,12 +4,14 @@ import '../pages/home/index.dart';
 import '../pages/follow/follow.dart';
 import '../pages/message/message.dart';
 import '../pages/mine/mine.dart';
+import '../pages/article/article.dart';
 
 final routes = {
   "/": (context) => Index(),
   "/follow": (context) => Follow(),
   "/message": (context) => Message(),
-  "/mine": (context) => Mine()
+  "/mine": (context) => Mine(),
+  "/article": (context, {arguments}) => Article(arguments:arguments)
 };
 
 var route = (RouteSettings settings) {
